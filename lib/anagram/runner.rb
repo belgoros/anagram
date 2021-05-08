@@ -5,11 +5,10 @@ module Anagram
   class Runner
     def initialize(argv)
       @options = Options.new(argv)
-      puts "options: #{@options.inspect}"
     end
 
     def run
-      finder = Finder.from_file(@options.dictionary)      
+      finder = Finder.from_file(@options.dictionary)
       @options.words_to_find.each do |word|
         anagrams = finder.lookup(word)
         if anagrams

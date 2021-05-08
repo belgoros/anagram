@@ -2,7 +2,7 @@ require 'optparse'
 
 module Anagram
   class Options
-    DEFAULT_DICTIONARY = "/path_to_your_dictionary/file"
+    DEFAULT_DICTIONARY = File.join(File.expand_path(__dir__), 'dictionary.txt')
     attr_reader :dictionary
     attr_reader :words_to_find
     def initialize(argv)
